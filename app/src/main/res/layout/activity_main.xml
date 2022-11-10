@@ -11,6 +11,10 @@
         android:layout_height="match_parent"
         android:id="@+id/rv"/>
     <ImageView
+        android:src="@drawable/add"
+        android:layout_margin="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:id="@+id/add"/>

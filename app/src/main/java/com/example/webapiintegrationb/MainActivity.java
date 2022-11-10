@@ -43,8 +43,23 @@ public class MainActivity extends AppCompatActivity {
         rv.setAdapter(adapter);
         rv.setLayoutManager(lm);
 
+
+
+        add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this,Add.class));
+                //hello
+                //hello
+            }
+        });
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
         RequestQueue queue= Volley.newRequestQueue(MainActivity.this);
-        StringRequest request=new StringRequest(Request.Method.GET, "http://172.16.39.241/smdb/get.php",
+        StringRequest request=new StringRequest(Request.Method.GET, "http://192.168.137.222/smdb/get.php",
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -77,14 +92,5 @@ public class MainActivity extends AppCompatActivity {
                 });
 
         queue.add(request);
-
-        add.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this,Add.class));
-                //hello
-                //hello
-            }
-        });
     }
 }
